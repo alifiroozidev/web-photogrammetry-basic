@@ -5,18 +5,14 @@ import json
 from app.lib.meshroom import Meshroom
 from os import path
 from functools import partial
-
 async def pipe(websocket, output):
     """Pipe the output of a meshroom run to a websocket"""
     await websocket.send(output)
-
 async def consumer(websocket, message):
     """
     Consumer callback called when the websocket server receives a message.
     It is expected that every message is a JSON string.
     """
-
-    # Decode the incoming message to a dictionary
     message = json.loads(message)
 
     # Bind the websocket as first parameter to the pipe function so it only
@@ -26,9 +22,9 @@ async def consumer(websocket, message):
     # Handle a run request, at which we want to start a new meshroom process
     if (message['type'] == 'run'):
 
-        # Set up a new meshroom process
-        m = Meshroom(path.join('model', 'input'), path.join('model', 'output'))
-        await m.run(path.join('model', 'default.json'), pipe=wspipe)
+     # Set up a new meshroom process
+     m = Meshroom(path.join('model', 'input'), path.join('model', 'output'))
+     await m.run(path.join('model', 'default.json'), pipe=wspipe)
 
 async def consumer_handler(websocket, path):
     """Handler that installs a callback for when the websocket server receives a message"""
