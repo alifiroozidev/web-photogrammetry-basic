@@ -1,0 +1,12 @@
+Todos
+---
+- final model / output of meshroom should be exportable/downloadable
+- the application doesn't run automatically as docker image (yet, for dev reasons, should be done at the end)
+- frontend form for starting meshroom should dissappear and replaced with just the output of the program when started
+- remove all input images after a meshroom run
+
+Wishlist
+---
+- visualisation of the output of meshroom
+- user friendly configuration of meshroom
+- during a session, store all images in a temp folder. during this session, the user should be able to re-run meshroom with each set of images they uploaded

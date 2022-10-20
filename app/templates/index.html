@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="uk-height-1-1">
+    <head>
+        <title>Meshroom web</title>
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='thirdparty/uikit/css/uikit.min.css') }}" />
+
+        <!-- UIkit JS -->
+        <script src="{{ url_for('static', filename='thirdparty/uikit/js/uikit.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='thirdparty/uikit/js/uikit-icons.min.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+        <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+    </head>
+    <body class="uk-height-1-1">
+
+        <div class="uk-dark uk-background-muted uk-height-1-1">
+            <div class="uk-container uk-padding">
+                <h1 class="uk-heading-large">Meshroom web</h1>
+
+                <form class="uk-form-stacked">
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="input">Images</label>
+                            <div class="uk-form-controls">
+                                <div uk-form-custom>
+                                    <input class="uk-input" id="input" name="input" type="file" accept="image/*" multiple>
+                                    <button class="uk-button uk-button-default" tabindex="-1">Select images</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="config">JSON configuration</label>
+                            <div class="uk-form-controls">
+                                <textarea class="uk-textarea" rows="20" id="config" name="config" placeholder="Enter JSON configuration" value="{ }"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="uk-button uk-button-primary">Start meshroom</button>
+                    </fieldset>
+                </form>
+                <pre><code></code></pre>
+            </div>
+        </div>
+
+    </body>
+</html>
