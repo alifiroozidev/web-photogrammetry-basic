@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Check if the directory already exists
+# MESHROOM is the main app
 if [ -d ./meshroom ]
 then
     echo "meshroom directory already exists"
